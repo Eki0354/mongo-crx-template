@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
+import MongoCrx from 'vite-plugin-mongo-crx'
+import manifest from './manifest.config'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [MongoCrx({ manifest }), vue()],
   build: {
     rollupOptions: {
       input: {
